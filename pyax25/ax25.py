@@ -88,13 +88,13 @@ class AX25:
         maxlen = 67
         message = self.genTime() + " - " + message
         if len(message) < maxlen:
-            message = ":BLN{}{:<5}:{}".format(line, group.upper(), message)
+            message = ":BLN{}{:>5}:{}".format(line, group.upper(), message)
             self.buildPacket(message=message)
             self.send()
         else:
             linenum = line
             for msgline in textwrap.wrap(message,maxlen):
-                longmessage = ":BLN{:<5}{}:{}".format(linenum, group.upper(), msgline)
+                longmessage = ":BLN{:>5}{}:{}".format(linenum, group.upper(), msgline)
                 self.buildPacket(message=longmessage)
                 self.send()
                 linenum += 1
