@@ -53,12 +53,14 @@ class AX25:
         else: 
             return datetime.datetime.now().astimezone().strftime("%H%M%S%z")
 
+    def swap16(self,x):
+        data = struct.pack("<H", x)
+        return data
+
     def calc_crc(self, packet):
         # Calculate the CRC
         c = self.x25_crc_func(packet)
-        crc = BitArray(hex(c))
-        crc.byteswap()
-        return (crc).bytes
+        return self.swap16(c)
 
     # Relays is an array of relays
     def buildPacket(self, cf = 0x03, message = ""):
