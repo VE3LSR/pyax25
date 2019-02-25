@@ -4,7 +4,7 @@ import pyax25
 
 x = pyax25.AX25("ve3yca", '192.168.85.3', 10093, 4)
 x.addRelay('VE3LSR')
-# x.setDst("APRS1")
+# x.setDst("ALSRWX")
 
 # Usefull Groups:
 # LOCAL: Local news

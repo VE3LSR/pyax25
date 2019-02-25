@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pyax25",
-    version="0.1.0",
+    version="1.0.0",
     author="VE3LSR / VE3YCA",
     author_email="projects@ve3lsr.ca",
     description="Python library to send AX25 UI packets over UDP",
