@@ -6,7 +6,7 @@ python:
 cache: pip
 script: pytest
 install:
-- pip install -r requirements.txt
+  - pip install -r requirements.txt
 deploy:
   provider: pypi
   user: coolacid
